@@ -51,3 +51,43 @@
     - Hair
     - HeadTop
     - HeadSide
+
+# Pilot Voidsuit - Civilian
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitPilot
+  name: pilot voidsuit helmet
+  description: Resist the urge to Akira slide into docking position.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Head/Hardsuits/pilot-civvie.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Head/Hardsuits/pilot-civvie.rsi
+  - type: Armor
+    modifiers:
+      coefficients: # hopefully this nullifies the base armor values
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+
+# Pilot Voidsuit - Security
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitPilotSecurity
+  name: security pilot voidsuit helmet
+  description: Wear this to hide your tears of never getting to to build shuttle guns.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Head/Hardsuits/pilot-security.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Head/Hardsuits/pilot-security.rsi
+  - type: Armor
+    modifiers:
+      coefficients: # copied from default sec helmet
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
