@@ -1,0 +1,67 @@
+- type: entity
+  id: StockpileShelf
+  parent: BaseStructure
+  name: stockpile shelf
+  description: A shelf designed for compact supplies storage. Can be linked to a stock catalogue screen.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Storage/stockpileshelf.rsi
+    snapCardinals: true
+    drawdepth: Mobs
+    layers:
+    - state: base
+  - type: Appearance
+  - type: Damageable
+    damageModifierSet: Metal
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 2
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        density: 1000
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+  - type: Tag
+    tags:
+    - Structure
+    - Metal
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Physics
+    bodyType: Static
+  - type: Anchorable
+  - type: Pullable
+  - type: Storage
+    grid:
+    - 0,0,15,4
+    maxItemSize: Huge
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: InteractionOutline
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
