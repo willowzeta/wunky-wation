@@ -65,3 +65,11 @@
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
+  - type: DeviceLinkSource
+    ports:
+    - SupplyStockpile
+  - type: DeviceNetwork
+    deviceNetId: Private
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
