@@ -5,7 +5,7 @@
   description: A shelf designed for compact supplies storage. Can be linked to a stock catalogue screen.
   components:
   - type: Sprite
-    sprite: _Funkystation/Structures/Storage/stockpileshelf.rsi
+    sprite: _Funkystation/Structures/Storage/Stockpile/stockpileshelf.rsi
     snapCardinals: true
     drawdepth: Mobs
     layers:
