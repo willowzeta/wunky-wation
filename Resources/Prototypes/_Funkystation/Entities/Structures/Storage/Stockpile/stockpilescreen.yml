@@ -1,0 +1,40 @@
+- type: entity
+  id: StockpileScreen
+  name: stockpile catalogue screen
+  description: Lists supplies contained in Cargo's stockpile.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: Transform
+    anchored: true
+  - type: WallMount
+    arc: 360
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Appearance
+  - type: Rotatable
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _Funkystation/Structures/Storage/Stockpile/stockpilescreen.rsi
+    layers:
+    - state: unpowered
+    - state: powered
+      shader: unshaded
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ApcPowerReceiver
+    powerLoad: 100
+  - type: Electrified
+    enabled: false
+    usesApcPower: true
+  - type: ExtensionCableReceiver
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
