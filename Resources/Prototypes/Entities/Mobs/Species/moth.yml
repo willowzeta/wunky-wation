@@ -160,6 +160,12 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _/Funkystation/Mobs/Species/Moth/displacement.rsi
+            state: jumpsuit-moth
 
 
 - type: entity
