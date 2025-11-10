@@ -100,3 +100,9 @@
       - type: MalfAiMarker
       mindRoles:
       - MindRoleMalfAi
+
+- type: entity
+  id: AnomalySpawning
+  parent: BaseGameRule
+  components:
+  - type: AnomalySpawningRule

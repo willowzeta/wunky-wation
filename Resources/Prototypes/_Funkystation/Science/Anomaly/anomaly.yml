@@ -1,0 +1,23 @@
+- type: entity
+  id: AnomalyDetector
+  parent: BaseMachinePowered
+  name: anomaly detector
+  description: TBD
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/rndpointsource.rsi
+    layers:
+    - state: rndpointsource-off
+    - state: rndpointsource
+      shader: unshaded
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ActiveRadio
+    channels:
+    - Science
+  - type: AnomalyDetector

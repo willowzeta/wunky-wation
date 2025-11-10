@@ -24,9 +24,10 @@ public sealed class AnomalySpawnRule : StationEventSystem<AnomalySpawnRuleCompon
         if (!TryComp<StationEventComponent>(uid, out var stationEvent))
             return;
 
-        var str = Loc.GetString("anomaly-spawn-event-announcement",
+		// funkystation | I'm gonna deprecate this file soon anyways so it's fine
+        /*var str = Loc.GetString("anomaly-spawn-event-announcement",
             ("sighting", Loc.GetString($"anomaly-spawn-sighting-{RobustRandom.Next(1, 6)}")));
-        stationEvent.StartAnnouncement = str;
+        stationEvent.StartAnnouncement = str; */
 
         base.Added(uid, component, gameRule, args);
     }
