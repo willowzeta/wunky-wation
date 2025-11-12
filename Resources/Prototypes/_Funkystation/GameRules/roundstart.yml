@@ -102,7 +102,7 @@
       - MindRoleMalfAi
 
 - type: entity
-  id: AnomalySpawning
+  id: AnomalySpawningScheduler
   parent: BaseGameRule
   components:
-  - type: AnomalySpawningRule
+  - type: AnomalySpawningScheduler

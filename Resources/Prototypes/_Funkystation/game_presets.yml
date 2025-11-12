@@ -19,6 +19,7 @@
   - BasicStationEventScheduler
   #- AntagStationEventScheduler
   - BasicRoundstartVariation
+  - AnomalySpawningScheduler # funkystation sci rework
 
 - type: gamePreset
   id: HereticTraitor
@@ -34,7 +35,8 @@
   - BasicStationEventScheduler
   #- AntagStationEventScheduler
   - BasicRoundstartVariation
-  
+  - AnomalySpawningScheduler
+
 
 - type: gamePreset
   id: ChangelingHeretics
@@ -50,6 +52,7 @@
   - BasicStationEventScheduler
   #- AntagStationEventScheduler
   - BasicRoundstartVariation
+  - AnomalySpawningScheduler
 
 
 - type: gamePreset
@@ -67,6 +70,7 @@
   - BasicStationEventScheduler
   #- AntagStationEventScheduler
   - BasicRoundstartVariation
+  - AnomalySpawningScheduler
 
 - type: gamePreset
   id: TheDrunkard
@@ -79,6 +83,7 @@
   minPlayers: 5
   rules:
     - IncidentDynamic
+    - AnomalySpawningScheduler
 
 - type: gamePreset
   id: TheApostle
@@ -92,6 +97,7 @@
   minPlayers: 5
   rules:
     - ApocalypseDynamic
+    - AnomalySpawning
 
 - type: gamePreset
   id: SecretDirector
@@ -153,6 +159,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - AnomalySpawningScheduler
 
 - type: gamePreset
   id: SecretMalfAi
@@ -169,5 +176,6 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - AnomalySpawningScheduler
 
 
