@@ -21,6 +21,8 @@
     - BasicRoundstartVariation
     - BasicStationEventScheduler
     # - RampingStationEventScheduler - Funky Station: We do not need ramping on cosmic cult rounds.
+    - AnomalySpawningScheduler # funkystation sci rework
+
 
 - type: gamePreset #Runs Cosmic Cult but shows "Secret" in lobby.
   id: SecretCosmicCult
@@ -37,3 +39,4 @@
     - BasicRoundstartVariation
     - BasicStationEventScheduler
     # - RampingStationEventScheduler - Funky Station: We do not need ramping on cosmic cult rounds.
+    - AnomalySpawningScheduler # funkystation sci rework

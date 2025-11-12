@@ -31,7 +31,8 @@
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
     - BasicRoundstartVariation
-    
+    - AnomalySpawningScheduler # funkystation sci rework
+
 - type: gamePreset
   id: SecretChangeling
   alias:
@@ -45,6 +46,7 @@
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
     - BasicRoundstartVariation
+    - AnomalySpawningScheduler # funkystation sci rework
 
 - type: gamePreset
   id: Traitorling
@@ -61,6 +63,7 @@
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
     - BasicRoundstartVariation
+    - AnomalySpawningScheduler # funkystation sci rework
 
 - type: gamePreset
   id: SecretTraitorling
@@ -77,7 +80,8 @@
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
     - BasicRoundstartVariation
-    
+    - AnomalySpawningScheduler # funkystation sci rework
+
 - type: gamePreset
   id: NukeTraitor
   alias:
@@ -93,6 +97,7 @@
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
     - BasicRoundstartVariation
+    - AnomalySpawningScheduler # funkystation sci rework
 
 - type: gamePreset
   id: NukeLing
@@ -108,6 +113,7 @@
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
     - BasicRoundstartVariation
+    - AnomalySpawningScheduler # funkystation sci rework
 
 - type: gamePreset
   id: RevTraitor
@@ -123,6 +129,7 @@
     - CalmTraitor
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
+    - AnomalySpawningScheduler # funkystation sci rework
 
 - type: gamePreset
   id: RevLing
@@ -140,6 +147,7 @@
     - MeteorSwarmScheduler
     - BasicRoundstartVariation
     - BasicRoundstartVariation
+    - AnomalySpawningScheduler # funkystation sci rework
 
 - type: gamePreset
   id: Blob
@@ -154,6 +162,7 @@
   - BasicRoundstartVariation
   - SubGamemodesRule
   - MeteorSwarmScheduler
+  - AnomalySpawningScheduler # funkystation sci rework
 
 - type: gamePreset
   id: SecretBlob
@@ -168,6 +177,7 @@
   - BasicRoundstartVariation
   - SubGamemodesRule
   - MeteorSwarmScheduler
+  - AnomalySpawningScheduler # funkystation sci rework
 
 - type: gamePreset
   id: TheSleeper
@@ -180,6 +190,7 @@
   minPlayers: 5
   rules:
     - CalmDynamic
+    - AnomalySpawningScheduler # funkystation sci rework
 
 - type: gamePreset
   id: TheGuide
@@ -192,3 +203,4 @@
   minPlayers: 25
   rules:
     - CombatDynamic
+    - AnomalySpawningScheduler # funkystation sci rework
