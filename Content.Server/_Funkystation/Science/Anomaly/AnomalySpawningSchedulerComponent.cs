@@ -26,6 +26,15 @@ public sealed partial class AnomalySpawningSchedulerComponent : Component
     [DataField]
     public float MatrixCapacityDecay = 100;
 
+    // base value that dictates the overall danger of the next anomaly.
+    // many other values are derived from this as a base
+    [DataField]
+    public float SeverityBase = 25;
+
+    // the degree to which the base severity will deviate, so anomalies aren't super predictable
+    [DataField]
+    public float SeverityRandom = 5;
+
     // weights of each anomaly type
     [DataField]
     public float WeightAbstraction = 0.8;
@@ -75,6 +84,31 @@ public sealed partial class AnomalySpawningSchedulerComponent : Component
     // multiplier to reactivity for being hit with the wrong particle type
     [DataField]
     public float ReactivityFragility = 1;
+
+    // if the anomaly is an abstraction:
+    // defines how often it pulses, in seconds
+    [DataField]
+    public float AbstractionPulseInterval;
+    // defines the radius of the pulse's effect
+    [DataField]
+    public float AbstractionPulseStrength;
+
+    // if the anomaly is an object:
+    // this defines the odds of hostility, out of 100
+    [DataField]
+    public float ObjectHostileChance;
+    // the interval between "active" periods of the hostile object
+    [DataField]
+    public float ObjectHostileInterval;
+    // how long the hostile object remains active
+    [DataField]
+    public float ObjectHostileTime;
+    // what kind of controller the object has
+    // 0 = no ai, 1 = simplemob, 2 = ghostrole
+    [DataField]
+    public float ObjectIntelligence = 0;
+
+
 }
 
 
