@@ -3,12 +3,13 @@ using Content.Shared.Anomaly.Components;
 using Content.Server.Chat.Systems;
 using Content.Shared.Radio;
 using Content.Server.Radio.EntitySystems;
+using Content.Server._Funkystation.Science.Anomaly;
 using Robust.Shared.Prototypes;
 using System;
 
 namespace Content.Server._Funkystation.Science.Anomaly;
 
-public class AnomalyDetectorSystem : EntitySystem
+public sealed class AnomalyDetectorSystem : EntitySystem
 
 {
     [Dependency] private readonly RadioSystem _radio = default!;

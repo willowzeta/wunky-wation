@@ -214,6 +214,4 @@ public sealed partial class AnomalySystem
     }
 }
 
-// funkystation
-[ByRefEvent]
-public record struct AnomalyGeneratedEvent();
+
