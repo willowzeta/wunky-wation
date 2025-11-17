@@ -37,16 +37,16 @@ public sealed partial class AnomalySpawningSchedulerComponent : Component
 
     // weights of each anomaly type
     [DataField]
-    public float WeightAbstraction = 0.8;
+    public float WeightAbstraction = 0.8f;
 
     [DataField]
-    public float WeightObject = 0.5;
+    public float WeightObject = 0.5f;
 
     [DataField]
-    public float WeightAffliction = 0.2;
+    public float WeightAffliction = 0.2f;
 
     [DataField]
-    public float WeightPhenomenon = 0.1;
+    public float WeightPhenomenon = 0.1f;
 
     // odds of a modifier being added. phenomena can't recieve these
     // derived dynamically from SeverityBase and SeverityRandom
@@ -75,7 +75,7 @@ public sealed partial class AnomalySpawningSchedulerComponent : Component
 
     // the amount the stability reduces every second
     [DataField]
-    public float StabiliyDecayRate = 5;
+    public float StabilityDecayRate = 5;
 
     // how much the stability of the anomaly will change upon hit with a APE/CHIMP particle
     [DataField]
@@ -83,7 +83,7 @@ public sealed partial class AnomalySpawningSchedulerComponent : Component
 
     // multiplier to reactivity for being hit with the wrong particle type
     [DataField]
-    public float ReactivityFragility = 1;
+    public float ReactivityFragility = 1f;
 
     // if the anomaly is an abstraction:
     // defines how often it pulses, in seconds
@@ -110,6 +110,7 @@ public sealed partial class AnomalySpawningSchedulerComponent : Component
 
 
 }
-
+[ByRefEvent]
+public record struct AnomalyGeneratedEvent();
 
 
