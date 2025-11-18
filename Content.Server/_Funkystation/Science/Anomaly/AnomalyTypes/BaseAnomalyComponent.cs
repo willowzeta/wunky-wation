@@ -1,18 +1,16 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
-using Content.Server._Funkystation.Science.Anomaly;
 
-namespace Content.Shared._Funkystation.Science.Anomaly;
+namespace Content.Server._Funkystation.Science.Anomaly.AnomalyTypes;
 
 // base, universal values between all the anomaly types
 // all values will be filled in by the spawning system
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
-[Access(typeof(SharedBaseAnomalySystem), (AnomalySpawningSchedulerSystem))]
+[RegisterComponent]
 public sealed partial class BaseAnomalyComponent : Component
 {
-	// denotes if the values have already been set by the spawning system
-	[DataField, AutoNetworkedField]
-	public bool AlreadyInitialized = false;
+    // denotes if the values have already been set by the spawning system
+    [DataField, AutoNetworkedField]
+    public bool AlreadyInitialized = false;
 
     // the anomaly's current health
     [DataField, AutoNetworkedField]
@@ -38,7 +36,8 @@ public sealed partial class BaseAnomalyComponent : Component
     [DataField, AutoNetworkedField]
     public float Fragility;
 
-	// base severity. placeholder for now
+    // base severity. placeholder for now
     [DataField, AutoNetworkedField]
     public float Severity;
 }
+

@@ -29,11 +29,11 @@ public sealed partial class AnomalySpawningSchedulerComponent : Component
     // base value that dictates the overall danger of the next anomaly.
     // many other values are derived from this as a base
     [DataField]
-    public float SeverityBase = 25;
+    public int SeverityBase = 25;
 
     // the degree to which the base severity will deviate, so anomalies aren't super predictable
     [DataField]
-    public float SeverityRandom = 5;
+    public int SeverityRandom = 5;
 
     // weights of each anomaly type
     [DataField]
@@ -63,11 +63,11 @@ public sealed partial class AnomalySpawningSchedulerComponent : Component
 
     // the base health ("stability") of the next anomaly. the anomaly is destroyed when it reaches 0
     [DataField]
-    public float StabiltyBase = 500;
+    public int StabilityBase = 500;
 
     // the degree of random deviation from the base stability
     [DataField]
-    public float StabilityRandom = 25;
+    public int StabilityRandom = 25;
 
     // how often the stability naturally decays, in seconds
     [DataField]

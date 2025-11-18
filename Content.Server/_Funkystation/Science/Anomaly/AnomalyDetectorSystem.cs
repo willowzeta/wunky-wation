@@ -3,7 +3,7 @@ using Content.Shared.Anomaly.Components;
 using Content.Server.Chat.Systems;
 using Content.Shared.Radio;
 using Content.Server.Radio.EntitySystems;
-using Content.Server._Funkystation.Science.Anomaly;
+using Content.Server._Funkystation.Science.Anomaly.AnomalyTypes;
 using Robust.Shared.Prototypes;
 using System;
 
@@ -44,10 +44,10 @@ public sealed class AnomalyDetectorSystem : EntitySystem
     {
         var classAnom = "Unknown";
 
-        var query = EntityQueryEnumerator<AnomalyComponent>();
+        var query = EntityQueryEnumerator<BaseAnomalyComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (TryComp<DetectedAnomalyComponent>(uid, out var anomComp))
+            if (comp.AlreadyInitialized)
             {
                 break;
             }
