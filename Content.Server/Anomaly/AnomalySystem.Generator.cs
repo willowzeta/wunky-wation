@@ -167,9 +167,6 @@ public sealed partial class AnomalySystem
         }
 
         Spawn(toSpawn, targetCoords);
-		// funkystation | raise event for detector
-		var ev = new AnomalyGeneratedEvent();
-        RaiseLocalEvent(ref ev);
     }
 
     private void OnGeneratingStartup(EntityUid uid, GeneratingAnomalyGeneratorComponent component, ComponentStartup args)

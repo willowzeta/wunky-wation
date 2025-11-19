@@ -9,6 +9,7 @@ using Content.Server.Anomaly;
 using Content.Shared.Physics;
 using Content.Shared.CCVar;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.Chat.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Map;
@@ -30,6 +31,7 @@ public sealed class AnomalySpawningSchedulerSystem : GameRuleSystem<AnomalySpawn
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly IConfigurationManager _configuration = default!;
+    [Dependency] private readonly ChatSystem _chat = default!;
 
     protected override void Started(EntityUid uid, AnomalySpawningSchedulerComponent spawningRule, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -86,7 +88,8 @@ public sealed class AnomalySpawningSchedulerSystem : GameRuleSystem<AnomalySpawn
 		}
     }
 
-    // can you believe this is novice's work?
+    // stapled together from code in AnomalySpawnRule and AnomalySystem.Generator
+    // can you believe that I'm not very good at this?
     public void SpawnAnomaly(string anomType)
     {
         if (!TryGetRandomStation(out var chosenStation))
@@ -150,7 +153,4 @@ public sealed class AnomalySpawningSchedulerSystem : GameRuleSystem<AnomalySpawn
 
         Spawn(anomType, targetCoords);
     }
-
-    [ByRefEvent]
-    public record struct AnomalyGeneratedEvent();
 }
