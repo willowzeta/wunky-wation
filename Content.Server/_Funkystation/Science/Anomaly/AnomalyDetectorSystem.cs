@@ -25,7 +25,6 @@ public sealed class AnomalyDetectorSystem : EntitySystem
 
     private void OnAnomalyGenerated(ref AnomalyGeneratedEvent args)
     {
-
         var anomAnnounceName = "Anomaly Detector";
 
         var query = EntityQueryEnumerator<AnomalyDetectorComponent>();
@@ -52,7 +51,8 @@ public sealed class AnomalyDetectorSystem : EntitySystem
                 break;
             }
 
-            var severity = Convert.ToInt32(comp.Severity * 100);
+            var severity = comp.Severity;
+
             switch (severity / 15)
             {
                 case 0:
@@ -78,12 +78,8 @@ public sealed class AnomalyDetectorSystem : EntitySystem
                     break;
             }
 
-            EnsureComp<DetectedAnomalyComponent>(uid);
+            comp.AlreadyInitialized = true;
         }
-
         return classAnom;
     }
 }
-
-
-

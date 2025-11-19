@@ -38,6 +38,6 @@ public sealed partial class BaseAnomalyComponent : Component
 
     // base severity. placeholder for now
     [DataField, AutoNetworkedField]
-    public float Severity;
+    public int Severity;
 }
 
