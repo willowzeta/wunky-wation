@@ -21,3 +21,20 @@
     channels:
     - Science
   - type: AnomalyDetector
+
+- type: entity
+  id: AnomalyContainer
+  parent: BaseItem
+  name: anomaly containment vessel
+  description: A container for a stabilized anomaly or similar object. If the container is full, you should probably get a move on.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/Science/Anomaly/container.rsi
+    layers:
+    - state: base
+    - state: empty
+      shader: unshaded
+      map: [ "enum.AnomContainerVisualLayers.Empty" ]
+    - state: full
+      shader: unshaded
+    - map: [ "enum.AnomContainerVisualLayers.Full" ]

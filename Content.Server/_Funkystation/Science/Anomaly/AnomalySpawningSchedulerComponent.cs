@@ -71,11 +71,11 @@ public sealed partial class AnomalySpawningSchedulerComponent : Component
 
     // how often the stability naturally decays, in seconds
     [DataField]
-    public float StabilityDecayFreq = 15;
+    public int StabilityDecayFreq = 15;
 
     // the amount the stability reduces every second
     [DataField]
-    public float StabilityDecayRate = 5;
+    public int StabilityDecayRate = 5;
 
     // how much the stability of the anomaly will change upon hit with a APE/CHIMP particle
     [DataField]
@@ -106,11 +106,21 @@ public sealed partial class AnomalySpawningSchedulerComponent : Component
     // what kind of controller the object has
     // 0 = no ai, 1 = simplemob, 2 = ghostrole
     [DataField]
-    public float ObjectIntelligence = 0;
+    public int ObjectIntelligence = 0;
+
+    // if the anomaly is an affliction:
+    // odds, out of 100, that the target of the anomaly is converted into an antagonist
+    [DataField]
+    public int AfflictionAntagChance = 1;
+    // odds, out of 100, that the affliction is of the cognition sub-type
+    [DataField]
+    public int AfflictionCognitionChance = 25;
+    // odds, out of 100, that a cognition will give a neutral "The Voices" objective
+    [DataField]
+    public int AfflictionCognitionVoices;
 
 
 }
-[ByRefEvent]
-public record struct AnomalyGeneratedEvent();
+
 
 

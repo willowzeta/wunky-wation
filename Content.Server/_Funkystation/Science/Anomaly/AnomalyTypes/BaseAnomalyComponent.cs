@@ -1,11 +1,11 @@
-using Robust.Shared.GameStates;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Content.Shared.Anomaly;
 
 namespace Content.Server._Funkystation.Science.Anomaly.AnomalyTypes;
 
 // base, universal values between all the anomaly types
 // all values will be filled in by the spawning system
 [RegisterComponent]
+[AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class BaseAnomalyComponent : Component
 {
     // denotes if the values have already been set by the spawning system
@@ -16,13 +16,17 @@ public sealed partial class BaseAnomalyComponent : Component
     [DataField, AutoNetworkedField]
     public float Stability;
 
+    // time of next decay event
+    [DataField, AutoNetworkedField]
+    public TimeSpan NextDecay = TimeSpan.Zero;
+
     // how often the anomaly loses health
     [DataField, AutoNetworkedField]
-    public float DecayFreq;
+    public TimeSpan DecayFreq = TimeSpan.Zero;
 
-    // how much the anomaly decays when the time runs out
+    // how much the anomaly decays when a decay event is called
     [DataField, AutoNetworkedField]
-    public float DecayRate;
+    public int DecayRate;
 
     // when the anomaly is stable enough to be contained
     [DataField, AutoNetworkedField]
@@ -39,5 +43,9 @@ public sealed partial class BaseAnomalyComponent : Component
     // base severity. placeholder for now
     [DataField, AutoNetworkedField]
     public int Severity;
+
+    // the particle type that increases stability
+    [DataField, AutoNetworkedField]
+    public AnomalousParticleType StabilizingParticle;
 }
 

@@ -18,6 +18,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Configuration;
+using Robust.Shared.Timing;
 
 namespace Content.Server._Funkystation.Science.Anomaly;
 
@@ -57,9 +58,8 @@ public sealed class AnomalySpawningSchedulerSystem : GameRuleSystem<AnomalySpawn
             SetAnomalyValues(spawningRule);
             ResetAnomalyTimer(spawningRule);
 
-			var ev = new AnomalyGeneratedEvent();
-        	RaiseLocalEvent(ref ev);
-            continue;
+            var ev = new AnomalyGeneratedEvent();
+            RaiseLocalEvent(ref ev);
         }
     }
 
@@ -80,8 +80,8 @@ public sealed class AnomalySpawningSchedulerSystem : GameRuleSystem<AnomalySpawn
 			// there's GOTTA be a better way to do this
 			comp.Severity = _random.Next(schedComp.SeverityBase - schedComp.SeverityRandom, schedComp.SeverityBase + schedComp.SeverityRandom);
 			comp.Stability = _random.Next(schedComp.StabilityBase - schedComp.StabilityRandom, schedComp.StabilityBase + schedComp.StabilityRandom);
-			comp.DecayFreq = schedComp.StabilityDecayFreq;
-			comp.DecayRate = schedComp.StabilityDecayRate;
+			comp.DecayFreq = TimeSpan.FromSeconds(schedComp.StabilityDecayFreq);
+            comp.DecayRate = schedComp.StabilityDecayRate;
 			comp.Reactivity = schedComp.ReactivityBase;
 			comp.Fragility = schedComp.ReactivityFragility;
 			continue;
