@@ -51,6 +51,12 @@
     damage:
       types:
         Radiation: 10
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 60
+    intensitySlope: 5
+    maxIntensity: 30
+    canCreateVacuum: false
 
 - type: entity
   id: RandomAnomAbstractionSpawner
