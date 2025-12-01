@@ -3,6 +3,7 @@ using Robust.Shared.Physics.Events;
 using Content.Server._Funkystation.Science.Anomaly.AnomalyTypes;
 using Content.Server.Anomaly.Components;
 using Content.Server.Explosion.EntitySystems;
+using Content.Shared.Interaction;
 
 namespace Content.Server._Funkystation.Science.Anomaly.Systems;
 

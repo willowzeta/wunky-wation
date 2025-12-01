@@ -6,6 +6,7 @@ using Content.Server.Radio.EntitySystems;
 using Content.Server._Funkystation.Science.Anomaly.AnomalyTypes;
 using Robust.Shared.Prototypes;
 using System;
+using Content.Server.Power.Components;
 
 namespace Content.Server._Funkystation.Science.Anomaly.Systems;
 
@@ -33,6 +34,12 @@ public sealed class AnomalyDetectorSystem : EntitySystem
             var anomClass = GetAnomalyClass();
 
             var anomNotif = $"A {anomClass}-class anomaly has been detected on station!";
+
+            if (!TryComp<ApcPowerReceiverComponent>(uid, out var powerComp))
+                return;
+
+            if (!powerComp.Powered)
+                return;
 
             _chat.DispatchGlobalAnnouncement(anomNotif, anomAnnounceName, playSound: false, colorOverride: Color.Purple);
             break;
