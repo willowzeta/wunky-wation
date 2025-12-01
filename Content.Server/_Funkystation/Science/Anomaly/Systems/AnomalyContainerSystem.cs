@@ -1,4 +1,5 @@
-using Content.Server._Funkystation.Science.Anomaly.Components;
+using Content.Server._Funkystation.Science.Anomaly.AnomalyTypes;
+using Content.Server._Funkystation.Science.Anomaly;
 using Content.Shared.Interaction;
 using Robust.Shared.GameObjects;
 
@@ -13,7 +14,7 @@ public sealed class AnomalyContainerSystem : EntitySystem
         SubscribeLocalEvent<AnomalyContainerComponent, AfterInteractEvent>(OnAfterInteract);
     }
 
-    public void OnAfterInteract(Entity<AnomalyContainerComponent> ent, AfterInteractEvent args)
+    public static void OnAfterInteract(EntityUid uid, AnomalyContainerComponent comp, AfterInteractEvent args)
     {
 
     }
