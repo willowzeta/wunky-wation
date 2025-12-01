@@ -1,5 +1,5 @@
 using Content.Server._Funkystation.Science.Anomaly.AnomalyTypes;
-using Content.Server._Funkystation.Science.Anomaly;
+using Content.Server._Funkystation.Science.Anomaly.Components;
 using Content.Shared.Interaction;
 using Robust.Shared.GameObjects;
 

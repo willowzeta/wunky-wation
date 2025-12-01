@@ -5,6 +5,7 @@ using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Shared.GameTicking.Components;
 using Content.Server._Funkystation.Science.Anomaly.AnomalyTypes;
+using Content.Server._Funkystation.Science.Anomaly.Components;
 using Content.Server.Anomaly;
 using Content.Shared.Physics;
 using Content.Shared.CCVar;
