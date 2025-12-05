@@ -14,10 +14,24 @@ public sealed class AnomalyContainerSystem : EntitySystem
         SubscribeLocalEvent<AnomalyContainerComponent, AfterInteractEvent>(OnAfterInteract);
     }
 
-    public static void OnAfterInteract(EntityUid uid, AnomalyContainerComponent comp, AfterInteractEvent args)
+    public void OnAfterInteract(EntityUid uid, AnomalyContainerComponent comp, AfterInteractEvent args)
     {
+        if (!args.CanReach || args.Target is not { } target)
+            return;
 
+        args.Handled = TryContainAnomaly((uid, comp), args.User, target);
     }
+
+    public bool TryContainAnomaly(Entity<AnomalyContainerComponent> ent, EntityUid user, EntityUid target)
+    {
+        if (!TryComp<BaseAnomalyComponent>(target, out var anomaly))
+        {
+            return false;
+        }
+
+        return true;
+    }
+
 
     [ByRefEvent]
     public record struct TryContainAnomalyEvent();

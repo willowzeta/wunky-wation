@@ -38,3 +38,7 @@
     - state: full
       shader: unshaded
     - map: [ "enum.AnomContainerVisualLayers.Full" ]
+ - type: AnomalyContainer
+ - type: ContainerContainer
+   container:
+     anomalycontainer: !type:Container
