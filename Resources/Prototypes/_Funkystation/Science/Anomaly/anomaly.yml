@@ -41,4 +41,8 @@
  - type: AnomalyContainer
  - type: ContainerContainer
    container:
-     anomalycontainer: !type:Container
+     anomalycontainer: !type:ContainerSlot
+ - type: ItemSlots
+   slots:
+     anomalyCan:
+       name: anomalyCan

@@ -1,6 +1,7 @@
 using Content.Server._Funkystation.Science.Anomaly.AnomalyTypes;
 using Content.Server._Funkystation.Science.Anomaly.Components;
 using Content.Shared.Interaction;
+using Content.Shared.Item;
 using Robust.Shared.GameObjects;
 
 namespace Content.Server._Funkystation.Science.Anomaly.Systems;
@@ -24,10 +25,17 @@ public sealed class AnomalyContainerSystem : EntitySystem
 
     public bool TryContainAnomaly(Entity<AnomalyContainerComponent> ent, EntityUid user, EntityUid target)
     {
-        if (!TryComp<BaseAnomalyComponent>(target, out var anomaly))
+        if (!TryComp<BaseAnomalyComponent>(target, out var anomalyComp))
         {
             return false;
         }
+
+        EnsureComp<ItemComponent>(target);
+
+        var ev = new TryContainAnomalyEvent();
+        RaiseLocalEvent(target, ref ev);
+
+
 
         return true;
     }
