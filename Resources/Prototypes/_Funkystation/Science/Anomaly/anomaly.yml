@@ -38,11 +38,11 @@
     - state: full
       shader: unshaded
     - map: [ "enum.AnomContainerVisualLayers.Full" ]
- - type: AnomalyContainer
- - type: ContainerContainer
-   container:
-     anomalycontainer: !type:ContainerSlot
- - type: ItemSlots
-   slots:
-     anomalyCan:
-       name: anomalyCan
+  - type: AnomalyContainer
+  - type: ContainerContainer
+    container:
+      anomalycontainer: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      anomalyCan:
+        name: anomalyCan

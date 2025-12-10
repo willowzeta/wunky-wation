@@ -2,12 +2,14 @@ using Content.Server._Funkystation.Science.Anomaly.AnomalyTypes;
 using Content.Server._Funkystation.Science.Anomaly.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
-using Robust.Shared.GameObjects;
+using Content.Shared.Containers.ItemSlots;
 
 namespace Content.Server._Funkystation.Science.Anomaly.Systems;
 
 public sealed class AnomalyContainerSystem : EntitySystem
 {
+    [Dependency] private readonly ItemSlotsSystem _slots = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -30,12 +32,18 @@ public sealed class AnomalyContainerSystem : EntitySystem
             return false;
         }
 
+        if (!TryComp<ItemSlotsComponent>(ent, out var itemSlots))
+        {
+            return false;
+        }
+
+
         EnsureComp<ItemComponent>(target);
 
         var ev = new TryContainAnomalyEvent();
         RaiseLocalEvent(target, ref ev);
 
-
+        _slots.TryInsert(ent.Owner, "anomalyCan", target, user, itemSlots);
 
         return true;
     }
