@@ -1,5 +1,7 @@
+using Content.Server.StationEvents;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
+using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Shared.GameTicking.Components;
 using Content.Server._Funkystation.Science.Anomaly.AnomalyTypes;
@@ -11,10 +13,13 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Server.Chat.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Configuration;
+using Robust.Shared.Timing;
 
 namespace Content.Server._Funkystation.Science.Anomaly.Systems;
 
