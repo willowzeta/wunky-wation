@@ -1,0 +1,10 @@
+- type: entity
+  id: DiskTerminal
+  parent: BaseMachinePowered
+  name: research disk terminal
+  description: Allows researchers to store data on disks, or to upload data to the research server.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/tech_disk_printer.rsi
+    layers:
+    - state: display

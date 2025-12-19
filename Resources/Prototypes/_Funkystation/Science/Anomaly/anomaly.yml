@@ -2,7 +2,7 @@
   id: AnomalyDetector
   parent: BaseMachinePowered
   name: anomaly detector
-  description: TBD
+  description: An important safety feature, or a herald of the apocalypse, depending on who you ask.
   components:
   - type: Sprite
     sprite: Structures/Machines/rndpointsource.rsi
@@ -46,3 +46,19 @@
     slots:
       anomalyCan:
         name: anomalyCan
+
+- type: entity
+  id: AnomalyResearchVessel
+  parent: BaseMachinePowered
+  name: anomaly research vessel
+  description: Put reality-bending object in, get valuable data out.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/Anomaly/anomaly_vessel.rsi
+    layers:
+    - state: base
+    - state: panel
+
+
+
+
