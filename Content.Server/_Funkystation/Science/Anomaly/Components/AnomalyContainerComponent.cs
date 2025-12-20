@@ -6,5 +6,5 @@ namespace Content.Server._Funkystation.Science.Anomaly.Components;
 public sealed partial class AnomalyContainerComponent : Component
 {
     [DataField]
-    public bool HasAnomaly;
+    public EntityUid? ContainedAnomaly;
 }

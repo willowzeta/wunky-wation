@@ -4,7 +4,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._Funkystation.Science.Anomaly;
 
 [Serializable, NetSerializable]
-public sealed partial class AnomCanDoAfterEvent : SimpleDoAfterEvent
+public sealed partial class AnomDoAfterEvent : SimpleDoAfterEvent
 {
 
 }
