@@ -18,7 +18,7 @@ public sealed class AnomalyContainerSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<AnomalyContainerComponent, AfterInteractEvent>(OnAfterInteract);
-        SubscribeLocalEvent<AnomalyContainerComponent, AnomCanDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<AnomalyContainerComponent, AnomDoAfterEvent>(OnDoAfter);
     }
 
     public void OnAfterInteract(EntityUid uid, AnomalyContainerComponent comp, AfterInteractEvent args)
@@ -39,7 +39,7 @@ public sealed class AnomalyContainerSystem : EntitySystem
         var needHand = user != ent.Owner;
 
         var doAfter =
-            new DoAfterArgs(EntityManager, user, 10, new AnomCanDoAfterEvent(), ent.Owner, target, used)
+            new DoAfterArgs(EntityManager, user, 10, new AnomDoAfterEvent(), ent.Owner, target, used)
             {
                 BreakOnDamage = true,
                 BreakOnMove = true,
@@ -61,7 +61,11 @@ public sealed class AnomalyContainerSystem : EntitySystem
             return;
 
         EnsureComp<ItemComponent>(args.Target.Value);
-        _slots.TryInsert(uid, "anomalyCan", args.Target.Value, args.User, itemSlots);
+        if (_slots.TryInsert(uid, "anomalyCan", args.Target.Value, args.User, itemSlots))
+        {
+            comp.ContainedAnomaly = uid;
+        }
+
     }
 
 

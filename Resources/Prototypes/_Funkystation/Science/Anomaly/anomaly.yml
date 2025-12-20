@@ -50,7 +50,7 @@
 - type: entity
   id: AnomalyResearchVessel
   parent: BaseMachinePowered
-  name: anomaly research vessel
+  name: anomaly analytic vessel
   description: Put reality-bending object in, get valuable data out.
   components:
   - type: Sprite
@@ -58,7 +58,14 @@
     layers:
     - state: base
     - state: panel
-
+  - type: ResearchVessel
+  - type: ContainerContainer
+    container:
+      anomalycontainer: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      researchVessel:
+        name: researchVessel
 
 
 
